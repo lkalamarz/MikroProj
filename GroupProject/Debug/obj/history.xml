@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\workspace\GroupProject\cmsis_boot -I..\..\..\workspace\GroupProject\cmsis -I..\..\..\workspace -I..\..\..\workspace\GroupProject\cmsis_lib -I..\..\.. -I..\..\..\workspace\GroupProject -I..\..\..\workspace\GroupProject\cmsis_lib\include">
+      <target file="init_pwm.o" lastModified="14517bbc267">
+         <source file="..\..\..\init_pwm.c" lastModified="14517bbacd4"/>
+      </target>
+      <target file="stm32f4xx_gpio.o" lastModified="1451790515f">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="1450ea4298a"/>
+      </target>
+      <target file="stm32f4xx_adc.o" lastModified="145179050c8">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_adc.c" lastModified="14517628d6f"/>
+      </target>
+      <target file="stm32f4xx_flash.o" lastModified="14517905207">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_flash.c" lastModified="145168f966c"/>
+      </target>
+      <target file="stm32f4xx_tim.o" lastModified="145179054e3">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="1450ea2c74f"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="1451790527c">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="1450e89884c"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="1450fc931cd">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="1450e898819"/>
+      </target>
+      <target file="stm32f4xx_usart.o" lastModified="14517904d19">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_usart.c" lastModified="1450e8a4c1a"/>
+      </target>
+      <target file="stm32f4xx_exti.o" lastModified="145179052f9">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="1451744a7c2"/>
+      </target>
+      <target file="init.o" lastModified="14517904fff">
+         <source file="..\..\..\init.c" lastModified="1451248f651"/>
+      </target>
+      <target file="main.o" lastModified="14517b88f0e">
+         <source file="..\..\..\main.c" lastModified="14517b88044"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="14517904ee7">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="1450e8a03ed"/>
+      </target>
+      <target file="misc.o" lastModified="1451790536f">
+         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="1450ea489c6"/>
+      </target>
+   </processor>
+</history>

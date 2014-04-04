@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="4.8.1 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=GroupProject.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\GroupProject -TC:\CooCox\CoIDE\configuration\ProgramData\GroupProject/link.ld -g">
+      <target file="GroupProject.elf" lastModified="14517bbc509">
+         <source file="..\obj\stm32f4xx_usart.o" lastModified="14517904d19"/>
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="1450fc931cd"/>
+         <source file="..\obj\main.o" lastModified="14517b88f0e"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="14517904ee7"/>
+         <source file="..\obj\init_pwm.o" lastModified="14517bbc267"/>
+         <source file="..\obj\init.o" lastModified="14517904fff"/>
+         <source file="..\obj\stm32f4xx_adc.o" lastModified="145179050c8"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="1451790515f"/>
+         <source file="..\obj\stm32f4xx_flash.o" lastModified="14517905207"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="1451790527c"/>
+         <source file="..\obj\stm32f4xx_exti.o" lastModified="145179052f9"/>
+         <source file="..\obj\misc.o" lastModified="1451790536f"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="145179054e3"/>
+      </target>
+   </processor>
+</history>
