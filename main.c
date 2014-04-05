@@ -9,13 +9,16 @@ int main()
 	    ADC_conf();
 	    uint16_t ADC_Val; //Stores the calculated ADC value
 	    int power = POWER_MIN;
+	    int power2 = POWER_MIN;
 	    int period = TIM2->ARR;
 		while(1)
 					{
 			ADC_Val = adc_convert();
 			Delay(100000);
 			power = 30 + ADC_Val*92/4096;
+			power2 = 30 + ADC_Val*92/4096;
 			TIM_SetCompare2(TIM2,power);
+			TIM_SetCompare3(TIM2,power2);
 			Delay(100000);
 			/*
 			TIM_SetCompare2(TIM2,power);

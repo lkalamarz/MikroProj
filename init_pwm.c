@@ -6,6 +6,8 @@ void TIM_conf()
 	TIM_OCInitTypeDef TIM_OCInitStructure;
 
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA,ENABLE);
+
 	TIM_TimeBaseStructInit(&TIM_TimeBaseStructure);
 	int prescaler = 16000000/(50000);
 
@@ -14,24 +16,24 @@ void TIM_conf()
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
 	TIM_TimeBaseInit(TIM2,&TIM_TimeBaseStructure);
 
-	TIM_OCStructInit(&TIM_OCInitStructure);
+//	TIM_OCStructInit(&TIM_OCInitStructure);
 	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
 	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
 	TIM_OC2Init(TIM2,&TIM_OCInitStructure);
+	TIM_OC3Init(TIM2,&TIM_OCInitStructure);
 
 	//TIM_ARRPreloadConfig(TIM2,ENABLE);
 	TIM_Cmd(TIM2,ENABLE);
 
 	GPIO_InitTypeDef GPIO_InitStructure;
 
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA,ENABLE);
-
-	GPIO_PinAFConfig(GPIOA,GPIO_PinSource1,GPIO_AF_TIM2);
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2;
+	GPIO_PinAFConfig(GPIOA,GPIO_PinSource1,GPIO_AF_TIM2);
+	GPIO_PinAFConfig(GPIOA,GPIO_PinSource2,GPIO_AF_TIM2);
 
 	GPIO_Init(GPIOA,&GPIO_InitStructure);
 }
