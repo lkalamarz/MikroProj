@@ -25,56 +25,11 @@ int main()
 	GPIO_Configuration();
 	init_GPIO();
 	USART3_Configuration();
-	//setPA12_OUT_PP();
-
 
 	while(1)
 				{
 
-
-
-
-		//GPIO_WriteBit(GPIOA, GPIO_Pin_0, 0);
-		//Delay(5000000);
-
-		//GPIO_WriteBit(GPIOA, GPIO_Pin_0, 1);
-
-		/*Demultiplekser(5);
-		GPIO_ResetBits(GPIOE,GPIO_Pin_3);
-		GPIO_ResetBits(GPIOE,GPIO_Pin_5);
-
-							PA_Set_Bit(7);*/
-							//GPIO_ResetBits(GPIOE,GPIO_Pin_5);
-	//	int g = 9;
-	//	GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_6);
-		//power = usart_rec();
-	/*power = USART_ReceiveData(USART3);
-		if(power==106)
-		{USART_puts(USART3,"zajebiscie");}
-		else if (power==254)
-		{USART_puts(USART3,"testowo");}
-		else
-			{}
-
-
-		power = 0;*/
-		//USART3_IRQHandler();
-		//Delay(10000);
-
-		/*ADC_Val = adc_convert();
-		Delay(100000);
-		power = 30 + ADC_Val*92/4096;
-		power2 = 30 + ADC_Val*92/4096;
-		TIM_SetCompare2(TIM2,power);
-		TIM_SetCompare3(TIM2,power2);
-		Delay(100000);*/
-		/*
-		TIM_SetCompare2(TIM2,power);
-		Delay(100000);
 				}
-				*/
-		//GPIO_SetBits(GPIOA, GPIO_Pin_1);
-	}
 }
 
 
@@ -93,14 +48,6 @@ int main()
  * 		   declared as volatile char --> otherwise the compiler will spit out warnings
  * */
 
-
-void setPA12_OUT_PP ( void ) {
-      GPIO_InitTypeDef GPIO_InitStructure;
-      GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
-      GPIO_InitStructure.GPIO_Mode = GPIO_OType_OD; // GPIO_Mode_AF_PP for alternate function
-      GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
-      GPIO_Init(GPIOA, &GPIO_InitStructure);
-}
 
 void RCC_Configuration(void)
 {
@@ -246,7 +193,9 @@ void USART3_IRQHandler(void){
 			else if (received_string[0] == 49) //& ((received_string[1] >=48 & received_string<=51)| received_string[1] ==53 | (received_string[1]==49 & (received_string[2]==48 | received_string[2]==49))))
 			{
 				GPIO_ResetBits(GPIOE,GPIO_Pin_3);
+				Delay(500);
 				Demultiplekser(received_string[1]-48);
+				Delay(500);
 
 				Delay(100000);
 				if (received_string[3]==49)
@@ -254,10 +203,11 @@ void USART3_IRQHandler(void){
 				else if (received_string[3] ==48)
 				{PA_Reset_Bit(received_string[2]-48);}
 								//USART_SendData(USART3,PA_Status());
-				//Delay(500);
+				Delay(500);
 
 			//				USART_SendData(USART3,130);
 				GPIO_SetBits(GPIOE,GPIO_Pin_3);
+				Delay(500);
 			}
 			else
 			{
@@ -402,23 +352,9 @@ void init_GPIO(void){
 	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2, GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5| GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8;		  // we want to configure PA0
 		GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN; 	  // we want it to be an input
 		GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;//this sets the GPIO modules clock speed
-		GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;   // this sets the pin type to push / pull (as opposed to open drain)
+		GPIO_InitStruct.GPIO_OType = GPIO_OType_OD;   // this sets the pin type to push / pull (as opposed to open drain)
 		GPIO_InitStruct.GPIO_PuPd =  GPIO_PuPd_UP;   // this enables the pulldown resistor --> we want to detect a high level
 		GPIO_Init(GPIOE, &GPIO_InitStruct);
-
-		GPIO_SetBits(GPIOE,GPIO_Pin_3);
-						GPIO_ResetBits(GPIOE,GPIO_Pin_4);
-						GPIO_ResetBits(GPIOE,GPIO_Pin_5);
-
-
-						RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
-						GPIO_InitStruct.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1|GPIO_Pin_2 | GPIO_Pin_3;
-							GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT; 	  // we want it to be an input
-							GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;//this sets the GPIO modules clock speed
-							GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;   // this sets the pin type to push / pull (as opposed to open drain)
-							GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_DOWN;   // this enables the pulldown resistor --> we want to detect a high level
-							GPIO_Init(GPIOH, &GPIO_InitStruct);
-
 
 		// B - PWM
 		// C - Interupts
