@@ -1,20 +1,22 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="4.8.1 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=GroupProject.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\GroupProject -TC:\CooCox\CoIDE\configuration\ProgramData\GroupProject/link.ld -g">
-      <target file="GroupProject.elf" lastModified="145317d6a89">
-         <source file="..\obj\stm32f4xx_usart.o" lastModified="145317d60b9"/>
-         <source file="..\obj\startup_stm32f4xx.o" lastModified="1450fc931cd"/>
-         <source file="..\obj\main.o" lastModified="145317d6138"/>
-         <source file="..\obj\stm32f4xx_rcc.o" lastModified="145317d6219"/>
-         <source file="..\obj\init_pwm.o" lastModified="145317d62a8"/>
-         <source file="..\obj\init.o" lastModified="145317d6335"/>
-         <source file="..\obj\stm32f4xx_adc.o" lastModified="145317d63f4"/>
-         <source file="..\obj\stm32f4xx_gpio.o" lastModified="145317d6488"/>
-         <source file="..\obj\stm32f4xx_flash.o" lastModified="145317d652e"/>
-         <source file="..\obj\system_stm32f4xx.o" lastModified="145317d65a4"/>
-         <source file="..\obj\stm32f4xx_exti.o" lastModified="145317d6620"/>
-         <source file="..\obj\misc.o" lastModified="145317d6693"/>
-         <source file="..\obj\stm32f4xx_tim.o" lastModified="145317d67ca"/>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=GroupProject.map -O0 --gc-sections -LD:\CooCox\CoIDE\configuration\ProgramData\GroupProject -TD:\CooCox\CoIDE\configuration\ProgramData\GroupProject/arm-gcc-link.ld -g">
+      <target file="GroupProject.elf" lastModified="14cf081dbc7">
+         <source file="..\obj\stm32f4xx_usart.o" lastModified="14cf037a601"/>
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="14cf037a680"/>
+         <source file="..\obj\main.o" lastModified="14cf081d903"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="14cf037aafc"/>
+         <source file="..\obj\init_pwm.o" lastModified="14cf037abb0"/>
+         <source file="..\obj\init.o" lastModified="14cf037ac5b"/>
+         <source file="..\obj\stm32f4xx_adc.o" lastModified="14cf037ad47"/>
+         <source file="..\obj\printf.o" lastModified="14cf037ae19"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="14cf037aee7"/>
+         <source file="..\obj\stm32f4xx_flash.o" lastModified="14cf037afe0"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="14cf037b09b"/>
+         <source file="..\obj\syscalls.o" lastModified="14cf037b145"/>
+         <source file="..\obj\stm32f4xx_exti.o" lastModified="14cf037b1f8"/>
+         <source file="..\obj\misc.o" lastModified="14cf037b2ad"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="14cf037b40d"/>
       </target>
    </processor>
 </history>
